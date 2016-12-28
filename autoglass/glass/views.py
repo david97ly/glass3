@@ -512,12 +512,37 @@ def agregarinfoservi(request,idservi):
                 print "soy gallo"
                 return redirect ("agregarinfoservi",servi.id)
         else:
-            print "PASE AL ELSE"
             forminfo = InfoForm()
-            print "LLAME AL FORMULARIO"
+            informa = Info.objects.filter(servicio = servi)
+
+
             template = "confinfo.html"
-            print servi.id
-            print "tambien llame al servicio"
+
+            return render_to_response(template,context_instance=RequestContext(request,locals()))
+    except Exception as e:
+        print e
+        return redirect('home')
+
+@login_required(login_url = 'home')
+def editarinfoservi(request,idinfo):
+    try:
+        print "PASE ENTRE"
+        info = get_object_or_404(Info,pk = idinfo)
+
+        print "NO ENCONTRE NADA"
+        if request.POST:
+            print "entre aqui"
+            forminfo = InfoForm(request.POST, request.FILES,instance = info)
+            print "saque todo eso"
+            if forminfo.is_valid():
+                forminfo.save()
+                print "soy gallo"
+                return redirect ("agregarinfoservi",info.servicio.id)
+        else:
+            forminfo = InfoForm(instance = info)
+
+            template = "editarconfinfo.html"
+
             return render_to_response(template,context_instance=RequestContext(request,locals()))
     except Exception as e:
         print e

@@ -76,55 +76,6 @@
 
       </div>
 
-    <div class="container">
-
-      <div id="servi">
-                         {% for s in informa %}
-
-              <!-- Carousel
-      ================================================== -->
-
-        <!-- Indicators -->
-
-         <div class="col-xs-12 col-sm-6 col-dm-4 col-lg-4 cuadro" id="item">
-           <div class="thumbnail">
-             <img  id="imgs"  class="img-responsive img-service" src="{{ s.foto.url }}" alt="...">
-             <div class="caption">
-               <h3>{{ s.titulo }}</h3>
-               <div class="sinfo">
-               <p>{{ s.informacion | safe }}</p>
-              </div>
-               <p><a href="{% url "editarinfoservi" s.id %}" class="btn btn-primary" role="button">Editar &raquo;</a>
-
-               <a href="{% url "eliminarserivicio" s.id %}" class="btn btn-danger" role="button">Eliminar &raquo;</a>
-              </p>
-
-
-                  {% if s.valida %}
-                  <a id="btvalido"  class="btn btn-success" role="button">Activada</a></p>
-
-                 {% else %}
-                  <a id="btvalido"  class="btn btn-danger" role="button">Desactivada</a></p>
-                 {% endif %}
-
-
-                  {% if s.orden.orden == 'Ninguno' %}
-                   <a id="btvalido"  class="btn btn-default" role="button">Ninguno</a></p>
-                 {% else %}
-                 <a id="btvalido"  class="btn btn-warning" role="button"><span class="badge">{{s.orden.orden}}</span></a></p>
-                 {% endif %}
-
-             </div>
-           </div>
-         </div>
-
-
-        {% endfor %}
-
-      </div><!-- /.carousel -->
-
-
-    </div>
 
 
 
