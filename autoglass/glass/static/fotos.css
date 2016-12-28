@@ -1,0 +1,146 @@
+
+
+       ul>li a{
+              font-size: 20px;
+            }
+
+
+
+      @media(max-width: 1200px){
+         
+            ul>li a{
+              font-size: 14px;
+            }
+     
+      }
+
+    
+       @media (max-width: 992px) {
+        ul>li a{
+              font-size: 14px;
+            }
+        #imglogo{
+              margin-left: -100px;
+            }
+
+         #menus{
+              margin-right: -120px;
+            }
+       
+      }
+      
+   
+
+        @media (max-width: 768px) {
+       ul>li a{
+              font-size:20px;
+            }
+            #imglogo{
+              margin-left: -0px;
+              width: 250px;
+              height: 50px;
+            }
+           #menus{
+              margin-right: 120px;
+            }
+            
+      }
+
+
+
+
+    hr{
+      background-color: #ff511e;
+      height: 5px;
+      width: 100%;
+     box-shadow: -3px 0px 5px 5px black;
+     }
+
+ 
+
+ .titu{
+
+    background-color: #0288d1;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: -20px;
+ }
+
+
+
+ .btn{
+
+background: #ff511e;  
+ }
+
+
+
+
+ .titus{
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: -20px;
+ }
+
+ 
+ p{
+  font-size: 17px;
+  text-align: justify;
+ }
+ 
+ .pprafo{
+   margin-top: 20px;
+ }
+ 
+ 
+
+
+#imgs{
+  width:350px;
+   height: 350px;
+ 
+}
+
+
+
+.image {
+
+position: relative;
+
+width: 100%; /* for IE 6 */
+
+}
+
+h2 {
+
+position: absolute;
+
+top: 250px;
+
+left: 0;
+
+
+
+}
+
+
+h2 b {
+ 
+color: white;
+
+font: bold 24px/45px Helvetica, Sans-Serif;
+
+letter-spacing: -1px;
+
+background: rgb(0, 0, 0);
+
+opacity: 0.5;
+padding: 10px;
+ 
+}
+
+#item:hover{
+  cursor: pointer;
+  opacity: 0.9;
+}
+

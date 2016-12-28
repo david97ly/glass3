@@ -1,0 +1,308 @@
+
+    <!DOCTYPE html>
+  <html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block titulo %}{% endblock titulo %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="google" content="notranslate">
+    <meta name="description" content="We provide services for the repair or replacement of glasses comfiable and guaranteed your vehicle.">
+    <meta name="og:description" content="We provide services for the repair or replacement of glasses comfiable and guaranteed your vehicle."/>
+    <meta name="og:url" content="http://masterautoglasscorp.com/"/>
+    <meta name="og:title" content="Master AutoGalss"/>
+
+
+  {% load static from staticfiles  %}
+    <link rel="stylesheet" type="text/css" href="/static/boot/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "home.css" %}">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/imagenes/icono/credit-cards.ico" />
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64770923-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+    <body>
+
+  <div class="navbar-wrapper">
+      <div class="container-fluit">
+{% block h1 %}{% endblock h1 %}
+        <div class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+             <!-- <a class="navbar-brand" href="#">{{compa}} </a>
+-->
+             <a href="/">    <img src="/static/imagenes/banner/logo3.png"  alt="Brand" class="pull-left img-responsive"  id="imglogo"></a>
+            </div>
+            <div class="navbar-collapse collapse" id="menus">
+             <ul class="nav navbar-nav pull-right">
+                  <li><a href="/"><span class="glyphicon glyphicon-home">Home</span></a></li>
+                  <li><a href="/servicios"><span class="glyphicon glyphicon-info-sign">Services</span></a></li>
+                  <li><a href="/ubicacion"><span class="glyphicon glyphicon-map-marker">Map</span></a></li>
+                  <li><a href="/fotos"><span class="glyphicon glyphicon-picture">Photos</span></a></li>
+                  <li><a href="/contacto"><span class="glyphicon glyphicon-phone-alt">Contact</span></a></li>
+
+
+                  {% if request.user.is_authenticated %}
+                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><span  >Configuraciones<b class="caret"></b></span></a>
+                    <ul class="dropdown-menu">
+                  <li><a href="{% url "conf" %}"><span class="glyphicon glyphicon-home">Slider</span></a></li>
+                  <li><a href="{% url "banner" %}"><span class="glyphicon glyphicon-info-sign">Baner W</span></a></li>
+                  <li><a href="/ubicacion"><span class="glyphicon glyphicon-map-marker">Contactos</span></a></li>
+                  <li><a href="{% url "cfotos" %}"><span class="glyphicon glyphicon-picture"></span>Fotos</a></li>
+                  <li><a href="{% url "cservicios" %}"><span class="glyphicon glyphicon-phone-alt">Servicios</span></a></li>
+                  <li><a href="{% url "home" %}"><span class="glyphicon glyphicon-question-sign">Home</span></a></li>
+               </ul>
+                   </li>
+                  {% endif %}
+
+               </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  <div class="col-xs-12 col-sm-12 col-md-12 hidden-lg hidden-md ">
+     <div class="jumbotron bien myCarousel">
+  <div class="container">
+
+    <h1>{{ba.mensaje}}</h1>
+    <p>{{ba.submensaje}}</p>
+
+     <!-- <img src="/static/imagenes/banner/principal.jpg" class="img-responsive img-rounded "  id="imgb" alt="First slide"> -->
+    <p><a href="{% url "servicios" %}" class="btn btn-primary btn-lg">Get started</a></p>
+  </div>
+</div>
+     </div>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide visible-lg visible-md">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+           {% if primera != "" %}
+        <div class="item active">
+          <img id="imgs" src="{{ primera.foto.url }}" data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>{{ primera.mensaje }}</h1>
+              <p>{{ primera.submensaje }}</p>
+              <p><a href="{% url "servicios" %}" class="btn btn-large btn-primary " id="vdetalle1" href="" >Get started</a></p>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if segunda != "" %}
+        <div class="item">
+          <img id="imgs" src="{{ segunda.foto.url }}" data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Second slide" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>{{ segunda.mensaje }}</h1>
+              <p>{{ segunda.submensaje }}</p>
+              <p><a class="btn btn-large btn-primary" href="#" id="vdetalle1">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if tercera != "" %}
+        <div class="item">
+          <img id="imgs" src="{{ tercera.foto.url }}" data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Third slide" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+             <h1>{{ tercera.mensaje }}</h1>
+              <p>{{ tercera.submensaje }}</p>
+              <p><a class="btn btn-large btn-primary" href="{% url "fotos" %}" id="vdetalle1">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+
+      {% if not primero1 == "" %}
+    <div class="container marketing">   <!-- container servicios relevantes -->
+
+
+      <div class="row">
+       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <div class="thumbnail">
+      <img src="{{ sprimero.imagen }}" alt="..." class="img-circle img-responsive" id="imgc1">
+      <div class="caption">
+         <h2>{{ sprimero.titulo }}</h2>
+         <div class="informa">
+         {{sprimero.info | safe}}
+          </div>
+        <p><a class="btn btn-default " href="{% url "detalleservice" primero1.id %}" id="vdetalle1">View details &raquo;</a></p>
+      </div>
+    </div>
+    </div> <!-- /.collg-4 -->
+
+       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <div class="thumbnail">
+      <img src="{{ ssegundo.imagen }}" alt="..." class="img-circle img-responsive" id="imgc1">
+      <div class="caption">
+        <h2>{{ssegundo.titulo}}</h2>
+        <div class="informa">
+        {{ ssegundo.info | safe }}
+        </div>
+       <p><a class="btn btn-default" href="{% url "detalleservice" segundo1.id %}" id="vdetalle2">View details &raquo;</a></p>
+      </div>
+    </div>
+    </div> <!-- /.collg-4 -->
+       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <div class="thumbnail">
+      <img src="{{ stercero.imagen }}" alt="..." class="img-circle img-responsive" id="imgc1">
+      <div class="caption">
+        <h2>{{ stercero.titulo }}</h2>
+         <div class="informa">
+      {{ stercero.info | safe }}
+       </div>
+       <p><a class="btn btn-default" href="{% url "detalleservice" tercero1.id %}" id="vdetalle3">View details &raquo;</a></p>
+      </div>
+    </div>
+    </div> <!-- /.collg-4 -->
+      </div><!-- /.row -->
+
+</div><!-- /.container servicios relevantes -->
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+      <!-- START THE FEATURETTES -->
+
+   <div class="container-relev">
+
+
+
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">For all your vehicles. <span class="text-muted" id="importa">No matter which model.</span></h2>
+          <p class="lead">We have a huge inventory for heavy, light truck, school buses and passenger vehicles late models also available.</p>
+        </div>
+        <div class=" col-md-5">
+          <img class="featurette-image img-responsive imgimport" src="/static/imagenes/info/4.jpg " alt="Generic placeholder image">
+        </div>
+      </div>
+
+
+
+   <hr class="featurette-divider">
+
+      <div class="row featurette visible-sm visible-xs  hidden-lg hidden-md">
+
+        <div class=" col-md-7 ">
+            <h2 class="featurette-heading">Hours <span class="text-muted" id="importa">you're welcome</span></h2>
+          <p class="lead"><b>Monday - Friday: 8am - 5:00 pm</b></p>
+          <p class="lead"><b>Saturday: 8am - 3:00 pm</b></p>
+        </div>
+
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive imgimport" src="/static/imagenes/info/atencion-cliente.jpg"  alt="Generic placeholder image">
+        </div>
+
+      </div>
+
+
+      <div class="row featurette hidden-sm hidden-xs  visible-lg visible-md">
+        <div class="col-md-5 " >
+          <img class="featurette-image img-responsive imgimport" src="/static/imagenes/info/atencion-cliente.jpg"  alt="Generic placeholder image">
+        </div>
+         <div class=" col-md-7 ">
+            <h2 class="featurette-heading">Hours <span class="text-muted" id="importa">you're welcome</span></h2>
+          <p class="lead"><b>Monday - Friday: 8am - 5:00 pm</b></p>
+          <p class="lead"><b>Saturday: 8am - 3:00 pm</b></p>
+        </div>
+      </div>
+
+
+
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Accepted Payment <span class="text-muted" id="importa">As you prefer</span></h2>
+          <p class="lead">We accept payments:</p>
+        <b>
+          <ul>
+            <li class="it" >VISA</li>
+            <li class="it" >MasterCard</li>
+            <li class="it" >DISCOVER</li>
+            <li class="it" >AMARICAN EXPRESS</li>
+            <li class="it" >and Cash</li>
+          </ul>
+          </b>
+
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive imgimport" src="/static/imagenes/info/visa-master-dolar-amri-discover.png"  alt="Generic placeholder image">
+        </div>
+      </div>
+
+
+   </div>
+
+
+
+
+
+      <hr class="hrsp">
+
+      <!-- /END THE FEATURETTES -->
+
+
+
+
+   <footer>
+
+        <p>Serving Bronx NY; City Island NY; Mamaroneck NY; Manhattan NY; Mount Vernon NY; New Rochelle NY; Westchester County NY; White Plains NY;
+Call us: (718) 542-8200 Last Updated:NOW.</p>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; Master Auto Glass Corp. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+
+    <script src="/static/js/jquery-1.2.6.min.js"></script>
+    <script src="/static/js/ajax.js"></script>
+    <script src="/static/boot/js/bootstrap.js" type="text/javascript"></script>
+
+  </body>
+</html>

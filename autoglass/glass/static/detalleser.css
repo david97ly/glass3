@@ -1,0 +1,131 @@
+@media (min-width: 992px){
+        
+        .container-relev{
+      padding-left: 300px;
+      padding-right: 300px;
+      margin-right: 0px;
+      padding-top: 15px;
+      margin-left: 0px;
+      background-color: #263238;
+      color:white;
+      padding-bottom: 15px;
+      box-shadow: -3px -3px 15px 5px black;
+     }
+      
+      }
+
+       ul>li a{
+              font-size: 20px;
+            }
+
+
+
+      @media(max-width: 1200px){
+         
+
+            .container-relev{
+      padding-left: 200px;
+      padding-right: 200px;
+      padding-top: 15px;
+      margin-right: 0px;
+      margin-left: 0px;
+      background-color: #263238;
+      color:white;
+      padding-bottom: 15px;
+      box-shadow: -3px -3px 15px 5px black;
+      
+     }
+      }
+
+    
+       @media (max-width: 992px) {
+        
+         #menus{
+              margin-right: -120px;
+            }
+               .container-relev{
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-right: 0px;
+      margin-left: 0px;
+      padding-top: 15px;
+      background-color: #263238;
+      color:white;
+      padding-bottom: 15px;
+      box-shadow: -3px -3px 15px 5px black;
+      
+     }
+      }
+      
+   
+
+        @media (max-width: 768px) {
+   
+              #menus{
+              margin-right: 120px;
+            }
+             .container-relev{
+               padding-left: 15px;
+               padding-right: 15px;
+               padding-bottom: 15px;
+               padding-top: 15px;
+               margin-right: 0px;
+               margin-left: 0px;
+               background-color: #263238;
+              color:white;
+              box-shadow: -3px -3px 15px 5px black;
+     
+               }
+
+
+      }
+
+       ul>li a{
+              font-size: 20px;
+            }
+
+
+    hr{
+      background-color: #ff511e;
+      height: 5px;
+      width: 100%;
+     box-shadow: -3px 0px 5px 5px black;
+     }
+
+ 
+
+ .titu{
+
+    background-color: #0288d1;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: -20px;
+ }
+
+
+
+ .btn{
+
+background: #ff511e;  
+ }
+
+
+
+
+ .titus{
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: -20px;
+ }
+
+ 
+ p{
+  font-size: 17px;
+  text-align: justify;
+ }
+ 
+ .pprafo{
+   margin-top: 20px;
+ }
+ 
+ 

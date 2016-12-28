@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+  <html>
+  <head lang="es">
+    <meta charset="UTF-8">
+    <title>{{nombre}}</title>
+     {% load static from staticfiles  %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/boot/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "editarfotos.css.css" %}">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/imagenes/icono/credit-cards.ico" />
+     <style type="text/css">
+      
+    
+     </style>
+     <script type="text/javascript">
+      
+     </script>
+  </head>
+    <body>
+
+  <div class="navbar-wrapper">
+      <div class="container-fluit">
+
+        <div class="navbar navbar-inverse navbar-static-top">
+          <div class="container"> 
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+             <!-- <a class="navbar-brand" href="#">{{compa}} </a> 
+-->
+              <a href="/">   <img src="/static/imagenes/banner/logo3.png"  alt="Brand" class="pull-left img-responsive"  id="imglogo"></a>
+            </div>
+            <div class="navbar-collapse collapse" id="menus">
+             <ul class="nav navbar-nav pull-right">
+                  <li><a href="{% url "conf" %}"><span class="glyphicon glyphicon-home">Slider</span></a></li>
+                  <li><a href="{% url "banner" %}"><span class="glyphicon glyphicon-info-sign">Baner W</span></a></li>
+                  <li><a href="{% url "conf" %}"><span class="glyphicon glyphicon-map-marker">Contactos</span></a></li>
+                  <li><a href="{% url "cfotos" %}"><span class="glyphicon glyphicon-picture"></span>Fotos</a></li>
+                  <li><a href="{% url "cservicios" %}"><span class="glyphicon glyphicon-phone-alt">Servicios</span></a></li>
+                  <li><a href="/"><span class="glyphicon glyphicon-question-sign">Home</span></a></li>
+               </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<div class="container-fuit">
+      
+     
+                
+       <!--      <div id="carru" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 container"> -->
+        <div id="carru" class="container">
+             
+             
+            
+      
+        <div id="formu">
+      
+             <form action="{% url "editarfoto" foto.id %}" class="navbar-form navbar-left" role="form" method="post" enctype="multipart/form-data"> 
+               {% csrf_token %}
+                 {{formfoto.as_p}}
+              <div class="form-group">
+              <p>  <input type="submit" id="guarda" value="Guardar" class="form-control" placeholder="Search">
+              <a href="{% url "cfotos"  %}" class="btn btn-primary" role="button">Cancelar</a></p>
+              </div>
+             
+               </form>
+                </div>
+           
+                      
+      </div>
+      
+      
+      
+      
+      
+    </div>
+      
+    <script src="/static/js/jquery-1.2.6.min.js"></script>
+    <script src="/static/js/ajax.js"></script>
+    <script src="/static/boot/js/bootstrap.js" type="text/javascript"></script>
+  
+  </body>
+</html>

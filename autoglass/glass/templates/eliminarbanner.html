@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+  <html>
+  <head lang="es">
+    <meta charset="UTF-8">
+    <title>{{nombre}}</title>
+     {% load static from staticfiles  %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/boot/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "eliminarservicio.css" %}">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/imagenes/icono/credit-cards.ico" />
+     <style type="text/css">
+      
+    
+     </style>
+     <script type="text/javascript">
+      
+     </script>
+  </head>
+    <body>
+
+  <div class="navbar-wrapper">
+      <div class="container-fluit">
+
+        <div class="navbar navbar-inverse navbar-static-top">
+          <div class="container"> 
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+             <!-- <a class="navbar-brand" href="#">{{compa}} </a> 
+-->
+               <a href="/">  <img src="/static/imagenes/banner/logo3.png"  alt="Brand" class="pull-left img-responsive"  id="imglogo"></a>
+            </div>
+            <div class="navbar-collapse collapse" id="menus">
+             <ul class="nav navbar-nav pull-right">
+                 <li><a href="{% url "conf" %}"><span class="glyphicon glyphicon-home">Slider</span></a></li>
+                  <li><a href="{% url "banner" %}"><span class="glyphicon glyphicon-info-sign">Baner W</span></a></li>
+                  <li><a href="{% url "conf" %}"><span class="glyphicon glyphicon-map-marker">Contactos</span></a></li>
+                  <li><a href="{% url "cfotos" %}"><span class="glyphicon glyphicon-picture"></span>Fotos</a></li>
+                  <li><a href="{% url "cservicios" %}"><span class="glyphicon glyphicon-phone-alt">Servicios</span></a></li>
+                  <li><a href="/"><span class="glyphicon glyphicon-question-sign">Home</span></a></li>
+               </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<div class="container-fuit">
+      
+     
+                
+       <!--      <div id="carru" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 container"> -->
+        <div id="carru" class="container">
+             
+             
+            
+      
+        <div id="formu">
+             
+             <form action="{% url "eliminarbanner" ban.id %}" class="navbar-form navbar-left" role="form" method="post" enctype="multipart/form-data"> 
+             <h3> Desea elilminar el banner "{{ ban.mensaje }}"</h3>
+               {% csrf_token %}
+                
+              <div class="form-group">
+              <p>  <input type="submit" id="guarda" value="Si" class="btn btn-large btn-primary" placeholder="Search">
+                <a href="{% url "banner"  %}" class="btn btn-primary" role="button">No</a></p>
+              </div>
+             
+               </form>
+                </div>
+           
+                      
+      </div>
+      
+      
+      
+           <!--      <div id="carru" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 container"> -->
+           <div id="carru" class="container">
+            
+           <!--    <p><a class="btn btn-large btn-primary " id="new" href="" >Agregar nuevo Slider</a></p>-->
+               
+                   
+    <br>
+    <br>
+            <!-- Carousel
+    ================================================== -->
+       <div class="container">
+            
+    <br>
+    <br>
+             
+    
+            <!-- Carousel
+    ================================================== -->
+  
+      <!-- Indicators -->
+   
+      <div id="myCarousel" class="carousel slide ">
+      <!-- Indicators -->
+           <div class="col-xs-12 col-sm-12 col-md-12 ">
+     <div class="jumbotron bien cuadro">
+  <div class="container ">
+    <h1>{{ ban.mensaje }}</h1>
+    <p>{{ ban.submensaje }}</p>
+     <!-- <img src="/static/imagenes/banner/principal.jpg" class="img-responsive img-rounded "  id="imgb" alt="First slide"> -->
+
+    <p><a class="btn btn-primary btn-lg">Detalle</a></p>
+	
+  </div>
+</div>
+     </div>
+      </div><!-- /.carousel -->
+   
+  
+    </div><!-- /.carousel -->
+      
+      </div>
+      
+      
+      
+      
+    </div>
+      
+    <script src="/static/js/jquery-1.2.6.min.js"></script>
+    <script src="/static/js/ajax.js"></script>
+    <script src="/static/boot/js/bootstrap.js" type="text/javascript"></script>
+    
+  </body>
+</html>

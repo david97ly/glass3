@@ -1,0 +1,136 @@
+ <!DOCTYPE html>
+  <html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>{{titulo}}</title>
+     {% load static from staticfiles  %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/boot/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "servicios.css" %}">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/imagenes/icono/credit-cards.ico" />
+
+  </head>
+    <body>
+<header class="app-header">
+  <div class="navbar-wrapper">
+      <div class="container-fluit">
+
+        <div class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+             <!-- <a class="navbar-brand" href="#">{{compa}} </a> -->
+
+           <a href="/">      <img src="/static/imagenes/banner/logo3.png"  alt="Brand" class="pull-left"  id="imglogo"></a>
+            </div>
+            <div class="navbar-collapse collapse" id="menus">
+           <ul class="nav navbar-nav pull-right">
+                   <li><a href="/"><span class="glyphicon glyphicon-home">Home</span></a></li>
+                  <li><a href="/servicios"><span class="glyphicon glyphicon-info-sign">Services</span></a></li>
+                  <li><a href="/ubicacion"><span class="glyphicon glyphicon-map-marker">Map</span></a></li>
+                  <li><a href="/fotos"><span class="glyphicon glyphicon-picture">Photos</span></a></li>
+                  <li><a href="/contacto"><span class="glyphicon glyphicon-phone-alt">Contact</span></a></li>
+
+
+                  {% if request.user.is_authenticated %}
+                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><span  >Configuraciones<b class="caret"></b></span></a>
+                    <ul class="dropdown-menu">
+                  <li><a href="{% url "conf" %}"><span class="glyphicon glyphicon-home">Slider</span></a></li>
+                  <li><a href="{% url "banner" %}"><span class="glyphicon glyphicon-info-sign">Baner W</span></a></li>
+                  <li><a href="/ubicacion"><span class="glyphicon glyphicon-map-marker">Contactos</span></a></li>
+                  <li><a href="{% url "cfotos" %}"><span class="glyphicon glyphicon-picture"></span>Fotos</a></li>
+                  <li><a href="{% url "cservicios" %}"><span class="glyphicon glyphicon-phone-alt">Servicios</span></a></li>
+                  <li><a href="{% url "home" %}"><span class="glyphicon glyphicon-question-sign">Home</span></a></li>
+               </ul>
+                   </li>
+                  {% endif %}
+
+               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   </header>
+
+
+<div class="col-xs-12 col-sm-12 col-dm-12 col-lg-12 titu">
+        <h1>Services Offered</h1>
+      </div>
+
+  <div class="row-fluit ">
+
+
+
+<!-- comienza la informacion -->
+
+<div id="servi">
+ {% for s in lisservi %}
+         <div class="col-xs-12 col-sm-6 col-dm-4 col-lg-4 " id="item">
+         <div class="thumbnail">
+           <img   class="img-responsive img-service" src="{{ s.imagen }}" alt="...">
+           <div class="caption">
+             <h3>{{ s.titulo }}</h3>
+             <div class ="sinfo">
+             {{ s.info | safe }}
+            </div>
+             <p><a href="{% url "detalleservice" s.sid %}"  class="btn btn-primary" role="button">View details &raquo;</a> </p>
+
+           </div>
+         </div>
+       </div>
+
+     {% endfor %}
+</div>
+
+  </div>
+
+
+
+
+
+
+      <hr class="hrsp">
+
+      <!-- /END THE FEATURETTES -->
+
+   <footer>
+
+        <p>Serving Bronx NY; City Island NY; Mamaroneck NY; Manhattan NY; Mount Vernon NY; New Rochelle NY; Westchester County NY; White Plains NY;
+Call us: (718) 542-8200 Last Updated:NOW.</p>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; Master Auto Glass Corp. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    <script src="/static/js/jquery-1.2.6.min.js"></script>
+    <script src="/static/js/ajax.js"></script>
+    <script src="/static/boot/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/static/js/mazori.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+$('#servi').masonry();
+ setTimeout ("$('#servi').masonry();", 2000);
+
+
+
+
+
+});
+
+
+</script>
+
+
+
+  </body>
+</html>
