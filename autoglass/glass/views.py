@@ -463,6 +463,20 @@ def eliminarserivicio(request, idservi):
     if request.POST:
         servi.delete()
         return HttpResponseRedirect("/cservicios")
+    else:
+        info = Info.objects.filter(servicio = servi)
+
+        class Servici():
+            titulo = ""
+            informacion = ""
+            imagen = ""
+        ser = Servici()
+        ser.titulo = servi.titulo
+        for inf in info:
+            if inf.orden.orden == "Primero":
+                ser.informacion  = inf.informacion
+                ser.imagen = inf.foto.url
+
 
     template = "eliminarservicio.html"
     return render_to_response(template,context_instance=RequestContext(request,locals()))
@@ -547,3 +561,31 @@ def editarinfoservi(request,idinfo):
     except Exception as e:
         print e
         return redirect('home')
+
+
+@login_required(login_url = 'home')
+def eliminarinfo(request, idservi):
+    print "ENTRE"
+    servi = get_object_or_404(Info,pk=idservi)
+    id = servi.servicio.id
+    print "lO ENCONTRE"
+    if request.POST:
+        servi.delete()
+        print "LO LOGRE ELIMINAR"
+        return redirect("agregarinfoservi",id)
+
+    template = "eliminarinfo.html"
+    return render_to_response(template,context_instance=RequestContext(request,locals()))
+
+
+def gallery(request):
+    try:
+        fot = Fotos.objects.filter(valida = True)
+    except Exception as e:
+        return redirect("home")
+    else:
+        for f in fot:
+            print f.nombre
+
+    template = "pantallacompleta.html"
+    return render_to_response(template,context_instance=RequestContext(request,locals()))

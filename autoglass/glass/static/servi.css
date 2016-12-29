@@ -3,7 +3,7 @@
       }
 
 @media (min-width: 992px){
-        
+
         .container-relev{
       padding-left: 300px;
       padding-right: 300px;
@@ -15,7 +15,7 @@
       padding-bottom: 15px;
       box-shadow: -3px -3px 15px 5px black;
      }
-      
+
       }
 
        ul>li a{
@@ -25,7 +25,7 @@
 
 
       @media(max-width: 1200px){
-         
+
 
             .container-relev{
       padding-left: 200px;
@@ -37,13 +37,13 @@
       color:white;
       padding-bottom: 15px;
       box-shadow: -3px -3px 15px 5px black;
-      
+
      }
       }
 
-    
+
        @media (max-width: 992px) {
-        
+
          #menus{
               margin-right: -120px;
             }
@@ -57,14 +57,14 @@
       color:white;
       padding-bottom: 15px;
       box-shadow: -3px -3px 15px 5px black;
-      
+
      }
       }
-      
-   
+
+
 
         @media (max-width: 768px) {
-   
+
               #menus{
               margin-right: 120px;
             }
@@ -78,7 +78,7 @@
                background-color: #263238;
               color:white;
               box-shadow: -3px -3px 15px 5px black;
-     
+
                }
 
 
@@ -96,7 +96,7 @@
      box-shadow: -3px 0px 5px 5px black;
      }
 
- 
+
 
  .titu{
 
@@ -110,7 +110,7 @@
 
  .btn{
 
-background: #ff511e;  
+background: #ff511e;
  }
 
 
@@ -122,14 +122,24 @@ background: #ff511e;
     margin-top: -20px;
  }
 
- 
+
  p{
   font-size: 17px;
   text-align: justify;
  }
- 
+
  .pprafo{
    margin-top: 20px;
  }
- 
- 
+
+ .tituloservi{
+   height: auto;
+   width: 100%;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   background-color: rgb(237, 216, 152);
+   margin-top: -20px;
+   margin-bottom: 0px;
+   text-shadow:  3px 0px 5px black;
+   color: white;
+ }
