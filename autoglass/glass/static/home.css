@@ -14,7 +14,7 @@
       .featurette-divider{
         margin-top: 80px;
       }
-      
+
       body{
         background: #FFFFFF;
       }
@@ -38,7 +38,7 @@
       padding-bottom: 15px;
       box-shadow: -3px -3px 15px 5px black;
      }
-      
+
       }
 
        ul>li a{
@@ -66,11 +66,11 @@
       color:white;
       padding-bottom: 15px;
       box-shadow: -3px -3px 15px 5px black;
-      
+
      }
       }
 
-    
+
        @media (max-width: 992px) {
             ul>li a{
               font-size: 14px;
@@ -98,11 +98,11 @@
       color:white;
       padding-bottom: 15px;
       box-shadow: -3px -3px 15px 5px black;
-      
+
      }
       }
-      
-   
+
+
 
         @media (max-width: 768px) {
             ul>li a{
@@ -133,7 +133,7 @@
                background-color: #263238;
               color:white;
               box-shadow: -3px -3px 15px 5px black;
-     
+
                }
 
 
@@ -149,13 +149,13 @@
 
 
        .bien{
-        background: #90caf9;
+        background: #e3f2fd;
         margin-left: -20px;
         margin-top: -20px;
         margin-right: -15px;
        }
 
-    
+
 
      .thumbnail{
       box-shadow: -3px -3px 15px 5px black;
@@ -168,11 +168,11 @@
      #imgc2{
     box-shadow: -3px 0px 15px 5px black;
      }
-     
+
      #imgc3{
     box-shadow: -3px 0px 15px 5px black;
      }
-     
+
 
      body{
       background-color: #F2f2f2;
@@ -212,15 +212,15 @@
       font-size: 20px;
      }
 
-  
-  
+
+
      hr{
       background-color: #ff511e;
       height: -1px;
       width: 100%;
      box-shadow: -3px 0px 5px 5px black;
      }
-     
+
      .imgimport{
       border-radius: 10px 10px 10px 10px;
       box-shadow: -3px 0px 5px 5px black;
@@ -238,7 +238,7 @@
 }
 
 
-     /* para el menu 
+     /* para el menu
 .app-navbar{
   background: rgba(0,0,0,0.6);
   border-radius: 50;
@@ -270,5 +270,5 @@
 }
 
 .img-circle{
-  width: 225px; 
+  width: 225px;
 }
